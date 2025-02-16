@@ -52,11 +52,7 @@ services:
             sleep 2
         done
         echo "📥 Pulling models inside Ollama container..."
-        docker exec ollama ollama pull gemma:2b
-        docker exec ollama ollama pull deepseek-r1:1.5b
-
-        docker exec ollama ollama pull qwen2.5-coder:1.5b
-        docker exec ollama ollama pull codegemma:2b
+        docker exec ollama ollama run llama3.2:1b
 
         echo "✅ Models downloaded. Exiting..."
     restart: "no"
