@@ -5,9 +5,9 @@ services:
     command:
       - "--configfile=/etc/traefik/traefik.yml"
     ports:
-      - "443:443"
-      - "8080:8080"
-      - "80:80"
+      - "40443:443"
+      - "4008080:8080"
+      - "40080:80"
     volumes:
       - "./letsencrypt:/letsencrypt"
       - "./traefik.yml:/etc/traefik/traefik.yml:ro"
@@ -69,7 +69,7 @@ services:
       - WEBUI_AUTH=False
       - WEBUI_SECRET_KEY=t0p-s3cr3t
     ports:
-      - "8080"  # Exposing Open WebUI
+      - "40090:8080"  # Exposing Open WebUI
     volumes:
       - ./webui-data:/app/data  # Persisting WebUI data
     labels:
